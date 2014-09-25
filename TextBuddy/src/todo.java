@@ -59,14 +59,15 @@ public class todo {
 		//This event triggered on enter key
 		input.addListener(SWT.Traverse, new Listener()
 	    {
+			
 			@Override
 			public void handleEvent(org.eclipse.swt.widgets.Event event) {
 				if(event.detail == SWT.TRAVERSE_RETURN)
 					try {
+						output.setText("");
 						tb.readFromFile();
 						String command = input.getText();
 						output.setText(tb.executeCommand(command));
-						tb.writeToFile();
 						input.setText("");
 					} catch (Exception e1) {
 						e1.printStackTrace();

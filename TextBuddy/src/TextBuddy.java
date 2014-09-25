@@ -94,7 +94,7 @@ public class TextBuddy {
 	 * text file will be processed.
 	 */
 	private static Scanner scanner = new Scanner(System.in);
-	
+
 	public TextBuddy(){};
 
 	public TextBuddy(String fileName) {
@@ -270,6 +270,10 @@ public class TextBuddy {
 			return CommandType.CLEAR;
 		} else if (commandTypeString.equalsIgnoreCase("exit")) {
 			return CommandType.EXIT;
+		} else if (commandTypeString.equalsIgnoreCase("sort")) {
+			return CommandType.SORT;
+		} else if (commandTypeString.equalsIgnoreCase("search")) {
+			return CommandType.SEARCH;
 		} else {
 			return CommandType.INVALID;
 		}
@@ -362,7 +366,7 @@ public class TextBuddy {
 		} else if (text.isEmpty()) {
 			return String.format(MESSAGE_EMPTY, _fileName);
 		} 
-		
+
 		if (hasSearchWordInMemory(wordToSearch)) {
 			return String.format(MESSAGE_LINE_FOUND, wordToSearch);
 		} else {
