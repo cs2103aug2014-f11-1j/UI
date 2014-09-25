@@ -53,7 +53,7 @@ public class todo {
 		shell = new Shell();
 		shell.setSize(450, 300);
 		shell.setText("Task Manager");
-		final TextBuddy tb = new TextBuddy();
+		final TextBuddy tb = new TextBuddy("todo.txt");
 		input = new Text(shell, SWT.BORDER);
 		input.setBounds(47, 33, 292, 23);
 		//This event triggered on enter key
@@ -63,10 +63,10 @@ public class todo {
 			public void handleEvent(org.eclipse.swt.widgets.Event event) {
 				if(event.detail == SWT.TRAVERSE_RETURN)
 					try {
-						tb.content = tb.readFileToList();
+						tb.readFromFile();
 						String command = input.getText();
 						output.setText(tb.executeCommand(command));
-						tb.writeIntoFile();
+						tb.writeToFile();
 						input.setText("");
 					} catch (Exception e1) {
 						e1.printStackTrace();

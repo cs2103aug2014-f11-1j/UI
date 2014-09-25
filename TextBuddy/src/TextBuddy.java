@@ -94,6 +94,8 @@ public class TextBuddy {
 	 * text file will be processed.
 	 */
 	private static Scanner scanner = new Scanner(System.in);
+	
+	public TextBuddy(){};
 
 	public TextBuddy(String fileName) {
 		if (isValidFileName(fileName)) {
