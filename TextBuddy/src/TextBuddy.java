@@ -368,7 +368,15 @@ public class TextBuddy {
 		} 
 
 		if (hasSearchWordInMemory(wordToSearch)) {
-			return String.format(MESSAGE_LINE_FOUND, wordToSearch);
+			int j = 1;
+			String result = String.format(MESSAGE_LINE_FOUND, wordToSearch)+"\n";
+			for(String line: text){
+				if(line.contains(wordToSearch)){
+					result += j + ". "+line+"\n";
+					j++;
+				}
+			}
+			return result;
 		} else {
 			return String.format(MESSAGE_LINE_NOT_FOUND, wordToSearch);
 		}

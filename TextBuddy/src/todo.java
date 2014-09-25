@@ -77,7 +77,7 @@ public class todo {
 		
 
 		output = new Text(shell, SWT.BORDER|SWT.WRAP);
-		output.setText("Welcome to TextBuddy.\n");
+		output.setText("Welcome to Task Manager!\n");
 		output.setBounds(47, 91, 292, 132);
 
 		/*Button btnEnter = new Button(shell, SWT.NONE);
